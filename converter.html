@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>java course</title>
+    
+
+</head>
+<body>
+    <!-- <h1 id="random"></h1>
+     -->
+
+     <div>
+        <h3>cm to inches</h3>
+     </div>
+    
+     <div>
+        <input type="number" id="input"> <br>
+     </div>
+     
+     <div>
+        <button type="submit" onclick="convert()">convert</button>
+     </div>
+
+     <div id="result"> </div>
+     <br><br>
+     
+     <h3> C to F</h3>
+
+     <div class="in">
+      <input type="number" id="in">
+     </div>
+
+     <button type="submit" onclick="con()">convert</button>
+
+     <div class="res" id="res"></div>
+
+     <br><br>
+
+     <h3>Prime number</h3>
+<input type="number" id="numberInput" placeholder="Enter a number">
+<button onclick="checkPrime()">Check</button>
+<div id="primeresult"></div>
+
+
+    <script>
+
+      //   let random = document.getElementById("random")
+      //   random.innerHTML = "UTHAYA"
+        
+      //   let score = 10
+      //   score=100
+
+      //   let amount = 1000
+      //   console.log("the total amount is "+amount)
+
+    function convert()
+   {
+       let cmVal = Number(document.getElementById("input").value)
+       let inchVal = cmVal/2.54
+       let result = document.getElementById("result")
+       result.innerHTML =inchVal.toFixed(3) + "inches"
+   }
+
+   function con()
+   {
+      const cVal = Number(document.getElementById("in").value)
+      const fVal = (cVal * 9/5) + 32
+      const res = document.getElementById("res")
+      res.innerHTML = fVal + "F"
+
+   }
+
+   // let msg=`happy 
+   // birthday`
+
+   // console.log(msg)
+
+// let itemCount = 5;
+// let total = 95;
+// console.log(`You have ${itemCount} items in your cart. Your bill amount is ${total}.`);
+
+function isPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkPrime() {
+    const numberInput = document.getElementById("numberInput").value;
+    const resultDiv = document.getElementById("primeresult");
+
+    if (numberInput.trim() === "") {
+        resultDiv.innerText = "Please enter a number.";
+        return;
+    }
+
+    const number = parseInt(numberInput);
+
+    if (isPrime(number)) {
+        resultDiv.innerText = number + " is a prime number.";
+    } else {
+        resultDiv.innerText = number + " is not a prime number.";
+    }
+}
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
